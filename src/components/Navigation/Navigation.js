@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import PersonIcon from '@material-ui/icons/Person';
-import { productCategorys, topMenuData } from '../../data/NavigationData'
+import { productCategoryMenus,productCategorys, topMenuData } from '../../data/NavigationData'
 import CheckIcon from '@material-ui/icons/Check';
 import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -108,7 +108,7 @@ function Navigation() {
       };
 
     return (
-        <Wrapper backgroundColor = "black" height = "169" width="primary">
+        <Wrapper backgroundColor="grey" height = "169" width="primary">
             {/* Section One */}
             <Container marginRight = "5">
                 <Wrapper display = "flex" position = "end" right = "15" paddingTop = "0.5">
@@ -122,7 +122,7 @@ function Navigation() {
                                 }
                             </Container>
                            
-                           <Placeholder marginTop = "1" marginRight = "1">{menuData.title}</Placeholder>
+                           <Placeholder marginTop = "0.1" marginRight = "1">{menuData.title}</Placeholder>
                         </TargetLink>
                     ))}
                 </Wrapper>
@@ -154,12 +154,29 @@ function Navigation() {
 
                 <Container marginRight = "10">
                     <TargetLink>
-                        <CartIcon color = "white"/>
-                        <NumberIndicaterBackground>
-                            <NumberIndicater>2</NumberIndicater>
-                        </NumberIndicaterBackground>
+                        <Wrapper display = "flex">
+                            <CartIcon color = "white"/>
+                            <NumberIndicaterBackground>
+                                <NumberIndicater>2</NumberIndicater>
+                            </NumberIndicaterBackground>
+                            <Placeholder marginTop = "2" marginLeft = "1">
+                                My Cart - Kshs 1,000,000.00
+                            </Placeholder>
+                        </Wrapper>
+                        
                     </TargetLink>
                 </Container>
+            </Wrapper>
+
+            {/* Product Categories */}
+            <Wrapper backgroundColor="black" height="50" marginTop="-1">
+                <Wrapper display="flex">
+                    {productCategoryMenus.map(productCategoryMenu => (
+                        <TargetLink color = "white" borderRight = {true} marginLeft = "1" key={productCategoryMenu.id}> 
+                            <Placeholder marginTop = "0.1" marginRight = "1">{productCategoryMenu.placeHolder}</Placeholder>
+                        </TargetLink>
+                    )) }
+                </Wrapper>
             </Wrapper>
         </Wrapper>
     )

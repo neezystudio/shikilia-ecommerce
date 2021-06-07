@@ -4,11 +4,13 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 export const Wrapper = styled.section`
     background: ${({backgroundColor}) => (
-        backgroundColor === "black" ? "#404040" : 'transparent'
+        backgroundColor === "grey" ? "#404040" : 'transparent'&&
+        backgroundColor === "black" ? "black" : 'transparent'
     )};
 
     height: ${({height}) => (
-        height === "169" ? "169px" : "100%"
+        height === "169" ? "155px" : "100%" &&
+        height === "50" ? "50px" : "100%"
     )};
 
     width: ${({width}) => (
@@ -30,7 +32,8 @@ export const Wrapper = styled.section`
     )};
 
     margin-top: ${({marginTop}) => (
-        marginTop === "1" ? "1rem" : "0rem" 
+        marginTop === "1" ? "1rem" : "0rem" &&
+        marginTop === "-1" ? "-3rem" : "0rem"
     )};
 `;
 
@@ -58,8 +61,12 @@ export const TargetLink = styled.div`
         color === "white" ? "white" : "black"
     )};
     border-left: ${({borderLeft}) => borderLeft ? "1px solid #FFFFFF" : "none"};
+    border-right: ${({borderRight}) => borderRight ? "1px solid #FFFFFF" : "none"};
     text-decoration: none;
     height: 1.5rem;
+    margin-left: ${(marginLeft) => (
+        marginLeft === "1" ? "10rem" : "0rem"
+    )}
 `;
 
 export const Placeholder = styled.p`
@@ -67,15 +74,25 @@ export const Placeholder = styled.p`
         marginRight === "1" ?  "1rem" : "0rem"
     )};
     margin-top: ${({marginTop}) => (
-        marginTop === "1" ? "0.1rem" : "0rem"
+        marginTop === "0.1" ? "0.1rem" : "0rem" &&
+        marginTop === "2" ? "10rem" : "0rem"
     )}
     height: 5rem;
+    color: ${({color}) => (
+        color === "white" ? "white" : "black",
+        color === "black" ? "black" : "white"
+    )};
+    margin-left: ${({marginLeft}) => (
+        marginLeft === "1" ? "1rem" : "0rem" &&
+        marginLeft === "2" ? "2rem" : "0rem"
+    )};
 `;
 
 export const CartIcon = styled(ShoppingCartIcon)`
     color: ${({color}) => (
         color === "white" ? "white" : "black"
     )};
+    margin-top: 1rem;
 `;
 
 export const NumberIndicaterBackground = styled.div`
@@ -84,8 +101,13 @@ export const NumberIndicaterBackground = styled.div`
     justify-content: center;
     border-radius: 25px;
     color: white;
-    margin-left: 0.5rem;
-    margin-top: -2rem;
+    margin-left: -1rem;
+    margin-top: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
 `;
 
-export const NumberIndicater = styled.div``;
+export const NumberIndicater = styled.div`
+    font-size: 13px;
+    text-align: center;
+`;
