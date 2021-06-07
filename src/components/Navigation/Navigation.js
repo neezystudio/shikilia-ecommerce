@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import { Button } from 'react-bootstrap';
-import {Container, TargetLink, Wrapper, Placeholder, CartIcon, NumberIndicaterBackground, NumberIndicater} from '../Common-Components/CommonComponents'
+import {Container, TargetLink, Wrapper, Placeholder, CartIcon, NumberIndicaterBackground, NumberIndicater, ColumnContainer, ColumnLeft, ColumnRight, Card} from '../Common-Components/CommonComponents'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -169,14 +169,37 @@ function Navigation() {
             </Wrapper>
 
             {/* Product Categories */}
-            <Wrapper backgroundColor="black" height="50" marginTop="-1">
+            <Wrapper backgroundColor="black" height="50" marginTop="-1" display="flex">
                 <Wrapper display="flex">
                     {productCategoryMenus.map(productCategoryMenu => (
-                        <TargetLink color = "white" borderRight = {true} marginLeft = "1" key={productCategoryMenu.id}> 
-                            <Placeholder marginTop = "0.1" marginRight = "1">{productCategoryMenu.placeHolder}</Placeholder>
+                        <TargetLink color = "white" borderRight={productCategoryMenu.border}  marginTop="1" padding="1" key={productCategoryMenu.id}> 
+                            <Placeholder>{productCategoryMenu.placeHolder}</Placeholder>
                         </TargetLink>
                     )) }
                 </Wrapper>
+                
+                <TargetLink>
+                    <Placeholder color="yellow" marginRight="5" display="flex">
+                        TODAY'S OFFER
+                    </Placeholder>
+                </TargetLink>
+            </Wrapper>
+
+            {/* Section Two */}
+            <Wrapper>
+                <ColumnContainer>
+                    <ColumnLeft reverse={false}>
+                        <Wrapper backgroundColor="black">
+                            <Card width="336" height="526">Hello</Card>
+                        </Wrapper>
+                        
+                    </ColumnLeft>
+                    <ColumnRight reverse={false}>
+                        <Wrapper backgroundColor="black">
+                            <Card>Hello</Card>
+                        </Wrapper>
+                    </ColumnRight>
+                </ColumnContainer>
             </Wrapper>
         </Wrapper>
     )

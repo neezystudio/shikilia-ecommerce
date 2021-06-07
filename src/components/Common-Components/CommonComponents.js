@@ -58,29 +58,38 @@ export const TargetLink = styled.div`
         display === "flex" ? "flex" : "block"
     )};
     color: ${({color}) => (
-        color === "white" ? "white" : "black"
+        color === "white" ? "white" : "black" &&
+        color === "yellow" ? "#D8A903" : "white"
     )};
     border-left: ${({borderLeft}) => borderLeft ? "1px solid #FFFFFF" : "none"};
     border-right: ${({borderRight}) => borderRight ? "1px solid #FFFFFF" : "none"};
     text-decoration: none;
     height: 1.5rem;
-    margin-left: ${(marginLeft) => (
-        marginLeft === "1" ? "10rem" : "0rem"
-    )}
+    padding: ${({padding}) => (
+        padding === "1" ? "0px 20px 0px 20px" : "0rem"
+    )};
+    margin-top: ${({marginTop}) => (
+        marginTop === "1" ? "1rem" : "0rem"
+    )};
 `;
 
 export const Placeholder = styled.p`
+    display: ${({display}) => (
+        display === "flex" ? "flex" : "block"
+    )};
     margin-right: ${({marginRight}) => (
-        marginRight === "1" ?  "1rem" : "0rem"
+        marginRight === "1" ?  "1rem" : "0rem" &&
+        marginRight === "5" ?  "5rem" : "0rem"
     )};
     margin-top: ${({marginTop}) => (
         marginTop === "0.1" ? "0.1rem" : "0rem" &&
-        marginTop === "2" ? "10rem" : "0rem"
-    )}
+        marginTop === "2" ? "1rem" : "0rem"
+    )};
     height: 5rem;
     color: ${({color}) => (
-        color === "white" ? "white" : "black",
-        color === "black" ? "black" : "white"
+        color === "white" ? "white" : "black" &&
+        color === "black" ? "black" : "white" &&
+        color === "yellow" ? "#D8A903" : "white"
     )};
     margin-left: ${({marginLeft}) => (
         marginLeft === "1" ? "1rem" : "0rem" &&
@@ -110,4 +119,54 @@ export const NumberIndicaterBackground = styled.div`
 export const NumberIndicater = styled.div`
     font-size: 13px;
     text-align: center;
+`;
+
+export const ColumnContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 800px;
+    padding: 3rem calc((100vw - 1300px) / 2);
+
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1rf;
+    }
+`;
+
+export const ColumnLeft = styled.div`
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: flex-start;
+    line-height: 1.4;
+    padding: 1rem 2rem;
+    order: ${({ reverse }) => (reverse ? '2' : '1')};
+`;
+
+export const ColumnRight = styled.div`
+    padding: 1rem 2rem;
+    order: ${({ reverse }) => (reverse ? '1' : '2')};
+    // display: flex;
+    // justify-content: center;
+    align-items: center;
+    @media and screen (max-width: 768px){
+        order: ${({ reverse }) => (reverse ? '2' : '1')};
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            height: 90%;
+        }
+    }
+`;
+export const Card = styled.div`
+    background: white;
+    width: ${({width}) => (
+        width === "336" ? "336px" : "100%"
+    )};
+    height: ${({height}) => (
+        height === "526" ? "526px" : "100%"
+    )};
 `;
