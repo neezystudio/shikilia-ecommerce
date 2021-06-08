@@ -184,23 +184,6 @@ function Navigation() {
                     </Placeholder>
                 </TargetLink>
             </Wrapper>
-
-            {/* Section Two */}
-            <Wrapper>
-                <ColumnContainer>
-                    <ColumnLeft reverse={false}>
-                        <Wrapper backgroundColor="black">
-                            <Card width="336" height="526">Hello</Card>
-                        </Wrapper>
-                        
-                    </ColumnLeft>
-                    <ColumnRight reverse={false}>
-                        <Wrapper backgroundColor="black">
-                            <Card>Hello</Card>
-                        </Wrapper>
-                    </ColumnRight>
-                </ColumnContainer>
-            </Wrapper>
         </Wrapper>
     )
 }
