@@ -5,16 +5,19 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 export const Wrapper = styled.section`
     background: ${({backgroundColor}) => (
         backgroundColor === "grey" ? "#404040" : 'transparent'&&
-        backgroundColor === "black" ? "black" : 'transparent'
+        backgroundColor === "black" ? "black" : 'transparent' &&
+        backgroundColor === "yellow" ? "#E7BB7B" : "transparent"
     )};
 
     height: ${({height}) => (
         height === "169" ? "155px" : "100%" &&
-        height === "50" ? "50px" : "100%"
+        height === "50" ? "50px" : "100%" &&
+        height === "294" ? "294px" : "100%"
     )};
 
     width: ${({width}) => (
-        width === "primary" ? "100%" : "100%"
+        width === "primary" ? "100%" : "100%" &&
+        width === "294" ? "294px" : "100%"
     )};
 
     display: ${({display}) => (display === "flex" ? "flex" : "block")};
@@ -40,6 +43,9 @@ export const Wrapper = styled.section`
 
     margin-left: ${({marginLeft}) => (
         marginLeft === "1" ? "1rem" : "0rem"
+    )};
+    border-radius: ${({borderRadius}) => (
+        borderRadius === "50" ? "150px" : "0px"
     )};
 `;
 
@@ -87,7 +93,30 @@ export const TargetLink = styled.div`
         marginTop === "1" ? "1rem" : "0rem"
     )};
 `;
-
+export const Title = styled.h1`
+    display: ${({display}) => (
+        display === "flex" ? "flex" : "block"
+    )};
+    width: 100%;
+    margin-right: ${({marginRight}) => (
+        marginRight === "1" ?  "1rem" : "0rem" &&
+        marginRight === "5" ?  "5rem" : "0rem"
+    )};
+    margin-top: ${({marginTop}) => (
+        marginTop === "0.1" ? "0.1rem" : "0rem" &&
+        marginTop === "2" ? "1rem" : "0rem"
+    )};
+    height: 5rem;
+    color: ${({color}) => (
+        color === "white" ? "white" : "black" &&
+        color === "black" ? "black" : "white" &&
+        color === "yellow" ? "#D8A903" : "white"
+    )};
+    margin-left: ${({marginLeft}) => (
+        marginLeft === "1" ? "1rem" : "0rem" &&
+        marginLeft === "2" ? "2rem" : "0rem"
+    )};
+`;
 export const Placeholder = styled.p`
     display: ${({display}) => (
         display === "flex" ? "flex" : "block"
@@ -139,9 +168,33 @@ export const NumberIndicater = styled.div`
 
 export const ColumnContainer = styled.div`
     display: grid;
-    grid-template-columns: 0fr 1fr;
-    grid-template-rows: 540px;
+    grid-template-columns: ${({columnSize}) => (
+        columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.3fr"
+    )};
+    grid-template-rows: ${({height}) => (
+        height === "540" ? "540px" : "100%"
+    )};
     padding: 3rem calc((100vw - 1300px) / 2);
+    position: ${({position}) => (
+        position === "absolute" ? "absolute" : "relative"
+    )};
+
+    &::before {
+        ${({slider}) => (
+            slider ? `
+                content: '';
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100vh;
+                bottom: 0vh;
+                left: 0;
+                overflow: hidden;
+                opacity: 0.4;
+                background: transparent;    
+            ` : ""
+        )}
+    }
 
     @media screen and (max-width: 768px){
         grid-template-columns: 1rf;
@@ -151,6 +204,7 @@ export const ColumnContainer = styled.div`
 export const ColumnLeft = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     // justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
@@ -186,4 +240,21 @@ export const Card = styled.div`
     height: ${({height}) => (
         height === "510" ? "510px" : "100%"
     )};
+`;
+
+export const Image = styled.img`
+    position: ${({position}) => (
+        position === "absolute" ? "absolute" : "relative"
+    )};
+    width: ${({width}) => (
+        width === "360" ? "360px !important" : "100%"
+    )};
+    height: ${({height}) => (
+        height === "555" ? "555px !important" : "100%"
+    )};
+    filter: ${({dropShadow}) => (
+        dropShadow ? "drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.27))" : "none"
+    )};
+    top: 175px;
+    left: 960px;
 `;

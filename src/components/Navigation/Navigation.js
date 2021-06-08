@@ -55,14 +55,17 @@ const useStyles = makeStyles((theme) => ({
 const AccountIcon = styled(PersonIcon)``;
 const CheckoutIcon = styled(CheckIcon)``;
 // const AccountIcon = styled(PersonIcon)``;
-const CompanyLogo = styled.h1`
-    font-family: Roboto Condensed;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 55px;
-    line-height: 64px;
+// const CompanyLogo = styled.h1`
+//     font-family: Roboto Condensed;
+//     font-style: italic;
+//     font-weight: bold;
+//     font-size: 55px;
+//     line-height: 64px;
 
-    color: #FFFFFF;
+//     color: #FFFFFF;
+// `;
+const CompanyLogo = styled.img`
+    
 `;
 const SelectCategory = styled.select`
   width: 6.5rem;
@@ -131,9 +134,11 @@ function Navigation() {
             {/* Section Two */}
             <Wrapper marginTop = "1" display = "flex">
                 
-                <Container marginRight = "10">
-                   <CompanyLogo>SHIKILIA</CompanyLogo> 
-                </Container>
+                {/* <Container marginRight = "10">
+                   <CompanyLogo src="https://res.cloudinary.com/emacon-production/image/upload/v1623146015/Shikilia/Shikilia_Stores_Logo_zdzer3.png" alt="logo"/>
+                </Container> */}
+
+                <CompanyLogo src="/images/logo.png" alt="logo"/>
                 
                 <Container marginRight = "10" marginTop="0.5">
                     <form>
