@@ -4,10 +4,11 @@ import LocalMallIcon from '@material-ui/icons/LocalMall'; // Clothing
 import DevicesIcon from '@material-ui/icons/Devices'; //Electronic
 import WatchIcon from '@material-ui/icons/Watch'; //Watch
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, TargetLink, Wrapper, Image } from '../Common-Components/CommonComponents';
+import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, TargetLink, Wrapper, Image, Button } from '../Common-Components/CommonComponents';
 import { productCategorysData } from '../../data/ProductCategoryData';
 import { ProductSliderData } from '../../data/ProductSliderData';
 import { Place } from '@material-ui/icons';
+import ProductCard from '../Common-Components/ProductCard';
 
 function Home() {
     const [sliderCurrent, setSliderCurrent] = useState(0);
@@ -49,6 +50,7 @@ function Home() {
 
     return (
         <Wrapper>
+            {/* Section 1 */}
             <ColumnContainer height="540" columnSize="rightBigger">
                 <ColumnLeft reverse={false}>
                     <Wrapper>
@@ -94,24 +96,50 @@ function Home() {
                                                     <Wrapper>
                                                         <Title color="black">{ProductSlide.title}</Title>
                                                         <Placeholder color="black">{ProductSlide.description}</Placeholder>
-                                                        <Placeholder color="black">{ProductSlide.price}</Placeholder>
+                                                        <Placeholder color="black" fontSize="20" fontWeight="bold" marginTop="2.5">KSH {ProductSlide.price}</Placeholder>
+                                                        <Button background="green" width="190" height="62" borderRadius="20">
+                                                            <Placeholder> SHOP NOW</Placeholder>
+                                                        </Button>
                                                     </Wrapper>
                                                 </ColumnLeft>
                                                 <ColumnRight reverse={false}>
                                                     <Wrapper backgroundColor="yellow" width="294" height="294" borderRadius="50">
-                                                        <Image src={ProductSlide.image} alt="product" width="360" height="555" dropShadow={true} position="absolute"/>
+                                                        <Image src={ProductSlide.image} alt="product" width="360" height="555" dropShadow={true} position="absolute" left="1020" />
                                                     </Wrapper>
                                                 </ColumnRight>
                                             </ColumnContainer>
                                         )}
                                     </Wrapper>
                                 ))}
-
-                                
                             </Wrapper>
-                            
                         </Card>
                     </Wrapper>
+                </ColumnRight>
+            </ColumnContainer>
+
+            {/* Section 2 */}
+            <ColumnContainer>
+                <ColumnLeft>
+                <Wrapper>
+                        <Card width="336" height="510">
+                            <Wrapper display="flex">
+                                
+                            </Wrapper>
+                        </Card>
+                    </Wrapper>
+                </ColumnLeft>
+                <ColumnRight>
+                    <Wrapper display="flex" flexDirection="row">
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                    </Wrapper>
+                    {/* <Wrapper display="flex" flexDirection="row">
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                    </Wrapper> */}
+                    
                 </ColumnRight>
             </ColumnContainer>
         </Wrapper>

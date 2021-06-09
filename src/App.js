@@ -8,6 +8,8 @@ import Home from './components/HomePage/Home';
 const MainSection = styled.section`
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 `
 
 function App() {
