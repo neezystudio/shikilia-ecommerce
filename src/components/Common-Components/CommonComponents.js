@@ -3,15 +3,14 @@ import {Link} from 'react-router-dom'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 export const Wrapper = styled.section`
-    // overflow-x: hidden;
     background: ${({backgroundColor}) => (
-        backgroundColor === "grey" ? "#404040" : 'transparent'&&
-        backgroundColor === "black" ? "black" : 'transparent' &&
+        backgroundColor === "Default" ? "#172b4d" : 'transparent'&&
+        backgroundColor === "primary" ? "#5e72e4" : 'black' &&
         backgroundColor === "yellow" ? "#E7BB7B" : "transparent"
     )};
 
     height: ${({height}) => (
-        height === "169" ? "155px" : "100%" &&
+        height === "169" ? "125px" : "100%" &&
         height === "50" ? "50px" : "100%" &&
         height === "294" ? "294px" : "100%" &&
         height === "185" ? "185px" : "100%" &&
@@ -72,14 +71,23 @@ export const Wrapper = styled.section`
 `;
 
 export const Container = styled.div`
+    display: ${({display}) => (
+        display === "flex" ? "flex" : "" &&
+        display === "grid" ? "grid" : ""
+    )};
+    margin: ${({margin}) => (
+        margin === "0-5-0-5" ? "0rem 5rem 0rem 5rem" : "0rem 0rem 0rem 0rem" &&
+        margin === "0.5-5-1-5" ? "0.5rem 5rem 0rem 5rem !important" : "0rem 0rem 0rem 0rem" &&
+        margin === "0-5-0-0" ? "0rem 5rem 0rem 0rem" : "0rem 0rem 0rem 0rem"
+    )};
     margin-left: ${({marginLeft}) => (
-        marginLeft === "1" ? "1rem" : "0rem"
+        marginLeft === "1" ? "1rem" : ""
     )};
     margin-right: ${({marginRight}) => (
-        marginRight === "0.5" ? "0.5rem" : "0rem",
-        marginRight === "1" ?  "1rem" : "0rem",
-        marginRight === "5" ? "5rem" : "0rem",
-        marginRight === "10" ? "clamp(10rem, 8vw, 15rem)" : "0rem"
+        marginRight === "0.5" ? "0.5rem" : "" &&
+        marginRight === "1" ?  "1rem" : "" &&
+        marginRight === "5" ? "5rem" : "" &&
+        marginRight === "10" ? "5rem" : ""
     )};
     margin-top: ${({marginTop}) => (
         marginTop === '0.5' ? "0.5rem" : "0rem"
@@ -99,13 +107,13 @@ export const TargetLink = styled.div`
     )};
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
-        color === "yellow" ? "#D8A903" : "white" &&
+        color === "yellow" ? "#fb6340" : "white" &&
         color === "black" ? "black" : "white"
     )};
     border-left: ${({borderLeft}) => borderLeft ? "1px solid #FFFFFF" : "none"};
     border-right: ${({borderRight}) => borderRight ? "1px solid #FFFFFF" : "none"};
     border: ${({border}) => (
-        border ? "1px solid #DADADA" : "none"
+        border ? "1px solid #DADADA" : ""
     )};
     border-radius: ${({borderRadius}) => (
         borderRadius === "20" ? "30px" : ""
@@ -122,9 +130,11 @@ export const TargetLink = styled.div`
         padding === "1" ? "0px 20px 0px 20px" : "0rem"
     )};
     margin-top: ${({marginTop}) => (
-        marginTop === "1" ? "1rem" : "0rem"
+        marginTop === "1" ? "0.5rem" : "0rem"
     )};
 `;
+export const Form = styled.form``;
+
 export const Button  = styled.button`
     display: ${({display}) => (
         display === "flex" ? "flex" : "block"
@@ -133,7 +143,7 @@ export const Button  = styled.button`
         position === "center" ? "center" : ""
     )};
     background: ${({background}) => (
-        background === "green" ? "green" : "transparent"
+        background === "primary" ? "#5e72e4" : "green"
     )};
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
@@ -150,11 +160,13 @@ export const Button  = styled.button`
     )};
     text-decoration: none;
     width: ${({width}) => (
-        width === "190" ? "190px" : ""
+        width === "190" ? "190px" : "100%" &&
+        width === "47" ? "47px" : "100%:"
     )};
     height: ${({height}) => (
-        height === "51px" ? "51px" : "1.5rem" &&
-        height === "62" ? "55px" : "1.5rem"
+        height === "51px" ? "51px" : "100%" &&
+        height === "62" ? "55px" : "100%" &&
+        height === "41" ? "41px" : "100%"
     )};
     padding: ${({padding}) => (
         padding === "1" ? "0px 20px 0px 20px" : "0rem"
@@ -239,7 +251,7 @@ export const CartIcon = styled(ShoppingCartIcon)`
 
 export const NumberIndicaterBackground = styled.div`
     display: flex;    
-    background: green;
+    background: #5e72e4;
     justify-content: center;
     border-radius: 25px;
     color: white;
@@ -346,7 +358,7 @@ export const Image = styled.img`
     )};
     height: ${({height}) => (
         height === "555" ? "555px !important" : "100%" &&
-        height === "100" ? "100% !important" : ""
+        height === "10" ? "50px !important" : "100%" 
     )};
     filter: ${({dropShadow}) => (
         dropShadow ? "drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.27))" : "none"

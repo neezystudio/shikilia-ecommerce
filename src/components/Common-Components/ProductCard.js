@@ -12,7 +12,7 @@ function ProductCard() {
                     width="100"
                     height="100"
                 />
-                <Wrapper 
+                {/* <Wrapper 
                     display="flex" 
                     position= "absolute"
                     backgroundColor="yellow"
@@ -23,7 +23,7 @@ function ProductCard() {
                     left="10"
                 >
                     <Placeholder textAlign="center" marginTop="0.5">10% OFF</Placeholder>
-                </Wrapper>
+                </Wrapper> */}
             </Wrapper>
 
             <Wrapper>

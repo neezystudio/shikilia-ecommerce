@@ -1,7 +1,7 @@
 export const topMenuData = [
-    {id :'1', icon: 'PersonIcon', title: 'WishList'},
-    {id :'2', icon: 'CheckIcon', title: 'Checkout'},
-    {id :'3', icon: 'PersonIcon', title: 'login'},
+    {id :'1', icon: 'FavoriteIcon', title: 'WishList', border: false},
+    {id :'2', icon: 'CheckIcon', title: 'Checkout', border: true},
+    {id :'3', icon: 'PersonIcon', title: 'victorgithuim@gmail.com', border: true},
 ];
 export const productCategorys = [
     {id: 1, value: "", placeHolder: "Categories"},
