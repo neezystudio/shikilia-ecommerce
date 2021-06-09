@@ -1,5 +1,5 @@
 export const productCategorysData = [
-    {id: 1, icon:"CategoryIcon", value: "", placeHolder: "Categories", background: "green", border: false, color:"white", forwardArrow: false},
+    {id: 1, icon:"CategoryIcon", value: "", placeHolder: "Categories", background: "Default", border: false, color:"white", forwardArrow: false},
     {id: 2, icon:"LocalMallIcon", value: "Clothing", placeHolder: "Clothing", background: "transparent", border: true, color:"black", forwardArrow: true},
     {id: 3, icon:"DevicesIcon", value: "Electronics", placeHolder: "Electronics", background: "transparent", border: true, color:"black", forwardArrow: true},
     {id: 4, icon:"", value: "Shoes", placeHolder: "Shoes", background: "transparent", border: true, color:"black", forwardArrow: true},

@@ -51,10 +51,10 @@ function Home() {
     return (
         <Wrapper>
             {/* Section 1 */}
-            <ColumnContainer height="540" columnSize="rightBigger">
+            <ColumnContainer height="460" columnSize="rightBigger">
                 <ColumnLeft reverse={false}>
                     <Wrapper>
-                        <Card width="336" height="510">
+                        <Card width="336">
                             {productCategorysData.map(productCategoryData => (
                                 <TargetLink 
                                     key={productCategoryData.id} 
@@ -91,34 +91,36 @@ function Home() {
                                 {ProductSliderData.map((ProductSlide, index) => (
                                     <Wrapper key={index}>
                                         {index === sliderCurrent && (
-                                            <ColumnContainer slider={true} position="absolute">
+                                            <ColumnContainer slider={true}>
                                                 <ColumnLeft reverse={false}>
                                                     <Wrapper>
-                                                        <Title color="black">{ProductSlide.title}</Title>
-                                                        <Placeholder color="black">{ProductSlide.description}</Placeholder>
-                                                        <Placeholder color="black" fontSize="20" fontWeight="bold" marginTop="2.5">KSH {ProductSlide.price}</Placeholder>
-                                                        <Button background="green" width="190" height="62" borderRadius="20">
-                                                            <Placeholder> SHOP NOW</Placeholder>
+                                                        <Title color="Default">{ProductSlide.title}</Title>
+                                                        <Placeholder color="black" fontSize="15" marginTop="2">{ProductSlide.description}</Placeholder>
+                                                        <Placeholder color="black" fontSize="20" fontWeight="bold" marginTop="2">KSH {ProductSlide.price}</Placeholder>
+                                                        <Button background="Default" display="flex" position="center" width="130" height="62" borderRadius="20">
+                                                            SHOP NOW
                                                         </Button>
                                                     </Wrapper>
                                                 </ColumnLeft>
                                                 <ColumnRight reverse={false}>
-                                                    <Wrapper backgroundColor="yellow" width="294" height="294" borderRadius="50">
-                                                        <Image src={ProductSlide.image} alt="product" width="360" height="555" dropShadow={true} position="absolute" left="1020" />
+                                                    <Wrapper backgroundColor="primary" width="280" height="280" borderRadius="50">
+                                                        <Image src={ProductSlide.image} alt="product" width="360" height="555" dropShadow={true} position="absolute" left="1020" top="110"/>
                                                     </Wrapper>
                                                 </ColumnRight>
                                             </ColumnContainer>
                                         )}
                                     </Wrapper>
                                 ))}
+                                <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="683"></Wrapper>
                             </Wrapper>
+                            
                         </Card>
                     </Wrapper>
                 </ColumnRight>
             </ColumnContainer>
 
             {/* Section 2 */}
-            <ColumnContainer>
+            <ColumnContainer columnSize="rightBigger">
                 <ColumnLeft>
                 <Wrapper>
                         <Card width="336" height="510">

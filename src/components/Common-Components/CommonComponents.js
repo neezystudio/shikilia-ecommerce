@@ -12,16 +12,18 @@ export const Wrapper = styled.section`
     height: ${({height}) => (
         height === "169" ? "125px" : "100%" &&
         height === "50" ? "50px" : "100%" &&
-        height === "294" ? "294px" : "100%" &&
+        height === "280" ? "280px" : "100%" &&
         height === "185" ? "185px" : "100%" &&
-        height === "39" ? "39px" : "100%"
+        height === "39" ? "39px" : "100%" &&
+        height === "101" ? "101px" : "100%"
     )};
 
     width: ${({width}) => (
         width === "primary" ? "100%" : "100%" &&
-        width === "294" ? "294px" : "100%" &&
+        width === "280" ? "280px" : "100%" &&
         width === "282" ? "282px" : "100%" &&
-        width === "80" ? "80px" : "100%"
+        width === "80" ? "80px" : "100%" &&
+        width === "933" ? "933px" : "100%"
     )};
 
     display: ${({display}) => (
@@ -63,7 +65,8 @@ export const Wrapper = styled.section`
         borderRadius === "25" ? "25px" : "0px"
     )};
     top: ${({top}) => (
-        top === "10" ? "10px" : "0px"
+        top === "10" ? "10px" : "" &&
+        top === "683" ? "183px !important" : ""
     )};
     left: ${({left}) => (
         left === "10" ? "10px" : "0px"
@@ -103,7 +106,7 @@ export const TargetLink = styled.div`
         position === "center" ? "center" : ""
     )};
     background: ${({background}) => (
-        background === "green" ? "green" : "transparent"
+        background === "Default" ? "#172b4d" : "transparent"
     )};
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
@@ -142,30 +145,29 @@ export const Button  = styled.button`
     justify-content: ${({position}) => (
         position === "center" ? "center" : ""
     )};
+    justify-items: center;
+    align-items: center;
     background: ${({background}) => (
-        background === "primary" ? "#5e72e4" : "green"
+        background === "primary" ? "#5e72e4" : "green" &&
+        background === "Default" ? "#172b4d" : "green"
     )};
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
         color === "yellow" ? "#D8A903" : "white" &&
         color === "black" ? "black" : "white"
     )};
-    border-left: ${({borderLeft}) => borderLeft ? "1px solid #FFFFFF" : "none"};
-    border-right: ${({borderRight}) => borderRight ? "1px solid #FFFFFF" : "none"};
-    border: ${({border}) => (
-        border ? "1px solid #DADADA" : "none"
-    )};
+    border: none;
     border-radius: ${({borderRadius}) => (
         borderRadius === "20" ? "30px" : ""
     )};
     text-decoration: none;
     width: ${({width}) => (
-        width === "190" ? "190px" : "100%" &&
+        width === "130" ? "130px" : "100%" &&
         width === "47" ? "47px" : "100%:"
     )};
     height: ${({height}) => (
         height === "51px" ? "51px" : "100%" &&
-        height === "62" ? "55px" : "100%" &&
+        height === "62" ? "50px" : "100%" &&
         height === "41" ? "41px" : "100%"
     )};
     padding: ${({padding}) => (
@@ -180,24 +182,10 @@ export const Title = styled.h1`
         display === "flex" ? "flex" : "block"
     )};
     width: 100%;
-    margin-right: ${({marginRight}) => (
-        marginRight === "1" ?  "1rem" : "0rem" &&
-        marginRight === "5" ?  "5rem" : "0rem"
-    )};
-    margin-top: ${({marginTop}) => (
-        marginTop === "0.1" ? "0.1rem" : "0rem" &&
-        marginTop === "2" ? "1rem" : "0rem"
-    )};
-    height: 5rem;
     color: ${({color}) => (
-        color === "white" ? "white" : "black" &&
-        color === "black" ? "black" : "white" &&
-        color === "yellow" ? "#D8A903" : "white"
+        color === "Default" ? "#172b4d" : "black"
     )};
-    margin-left: ${({marginLeft}) => (
-        marginLeft === "1" ? "1rem" : "0rem" &&
-        marginLeft === "2" ? "2rem" : "0rem"
-    )};
+    font-weight: bold;
 `;
 export const Placeholder = styled.p`
     display: ${({display}) => (
@@ -233,12 +221,12 @@ export const Placeholder = styled.p`
         marginLeft === "2" ? "2rem" : "0rem"
     )};
     font-size: ${({fontSize}) => (
-        fontSize === "20" ? "30px" : "" &&
+        fontSize === "20" ? "22px" : "" &&
+        fontSize === "15" ? "30px !important" : "" &&
         fontSize === "18" ? "55px" : ""
     )};
     font-weight: ${({fontWeight}) => (
-        fontWeight === "800" ? "bold" : "" &&
-        fontWeight === "bold" ? "bold" : ""
+        fontWeight === "bold" ? "bold" : "" 
     )};
 `;
 
@@ -272,9 +260,9 @@ export const ColumnContainer = styled.div`
         columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.3fr"
     )};
     grid-template-rows: ${({height}) => (
-        height === "540" ? "540px" : "100%"
+        height === "540" ? "460px" : "100%"
     )};
-    padding: 3rem calc((100vw - 1400px) / 2);
+    padding: 1rem calc((100vw - 1400px) / 2);
 
 
     &::before {
@@ -306,7 +294,7 @@ export const ColumnLeft = styled.div`
     // justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     order: ${({ reverse }) => (reverse ? '2' : '1')};
 `;
 
@@ -330,7 +318,7 @@ export const ColumnRight = styled.div`
     }
 `;
 export const Card = styled.div`
-    background: #F4F4F4;
+    background: #f4f5f7;
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
     width: ${({width}) => (
         width === "336" ? "336px" : "100%" &&
@@ -353,7 +341,7 @@ export const Image = styled.img`
         position === "absolute" ? "absolute" : ""
     )};
     width: ${({width}) => (
-        width === "360" ? "360px !important" : "100%" &&
+        width === "360" ? "350px !important" : "100%" &&
         width === "100" ? "100% !important" : ""
     )};
     height: ${({height}) => (
@@ -363,7 +351,9 @@ export const Image = styled.img`
     filter: ${({dropShadow}) => (
         dropShadow ? "drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.27))" : "none"
     )};
-    top: 175px;
+    top: ${({top}) => (
+        top === "110" ? "110px" : ""
+    )};
     left: ${({left}) => (
         left === "1020" ? "1020px" : "0px"
     )};
