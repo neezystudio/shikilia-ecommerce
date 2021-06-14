@@ -4,10 +4,9 @@ import LocalMallIcon from '@material-ui/icons/LocalMall'; // Clothing
 import DevicesIcon from '@material-ui/icons/Devices'; //Electronic
 import WatchIcon from '@material-ui/icons/Watch'; //Watch
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, TargetLink, Wrapper, Image, Button } from '../Common-Components/CommonComponents';
+import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, TargetLink, Wrapper, Image, Button, SliderButtons, NextArrow, PrevArrrow } from '../Common-Components/CommonComponents';
 import { productCategorysData } from '../../data/ProductCategoryData';
 import { ProductSliderData } from '../../data/ProductSliderData';
-import { Place } from '@material-ui/icons';
 import ProductCard from '../Common-Components/ProductCard';
 
 function Home() {
@@ -111,7 +110,11 @@ function Home() {
                                         )}
                                     </Wrapper>
                                 ))}
-                                <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="683"></Wrapper>
+                                <SliderButtons>
+                                    <PrevArrrow/>
+                                    <NextArrow/>
+                                </SliderButtons>
+                                <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="10" marginTop="-9"></Wrapper>
                             </Wrapper>
                             
                         </Card>

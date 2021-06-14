@@ -1,6 +1,8 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components/macro'
 import {Link} from 'react-router-dom'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 export const Wrapper = styled.section`
     background: ${({backgroundColor}) => (
@@ -54,7 +56,8 @@ export const Wrapper = styled.section`
     margin-top: ${({marginTop}) => (
         marginTop === "1" ? "1rem" : "0rem" &&
         marginTop === "-1" ? "-3rem" : "0rem" &&
-        marginTop === "0.5" ? "0.7rem" : "0rem"
+        marginTop === "0.5" ? "0.7rem" : "0rem" &&
+        marginTop === "-9" ? "-6.5rem" : "0rem"
     )};
 
     margin-left: ${({marginLeft}) => (
@@ -65,8 +68,7 @@ export const Wrapper = styled.section`
         borderRadius === "25" ? "25px" : "0px"
     )};
     top: ${({top}) => (
-        top === "10" ? "10px" : "" &&
-        top === "683" ? "183px !important" : ""
+        top === "10" ? "10px" : "" 
     )};
     left: ${({left}) => (
         left === "10" ? "10px" : "0px"
@@ -357,4 +359,38 @@ export const Image = styled.img`
     left: ${({left}) => (
         left === "1020" ? "1020px" : "0px"
     )};
+`;
+ export const SliderButtons = styled.div`
+    position: absolute;
+    bottom: 210px;
+    right: 130px;
+    display: flex;
+    z-index: 10;
+    margin-top: -5rem !important;
+`;
+
+const arrowButtons = css`
+    width: 50px !important;
+    height: 50px !important;
+    color: #fff;
+    cursor: pointer;
+    background: #000d1a;
+    border-radius: 50px;
+    padding: 10px; 
+    margin-right: 3rem;
+    user-select: none;
+    transition: 0.3s;
+    top: 10px !important;
+    &:hover {
+        background: #5e72e4;
+        transform: scale(1.05);
+    }
+`;
+export const PrevArrrow = styled(ArrowBackIcon)`
+    ${arrowButtons};
+    margin-right: 1rem;
+`;
+export const NextArrow = styled(ArrowForwardIcon)`
+    ${arrowButtons};
+    margin-right: 4rem;
 `;
