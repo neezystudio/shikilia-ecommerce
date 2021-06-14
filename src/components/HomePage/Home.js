@@ -8,6 +8,7 @@ import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, Tar
 import { productCategorysData } from '../../data/ProductCategoryData';
 import { ProductSliderData } from '../../data/ProductSliderData';
 import ProductCard from '../Common-Components/ProductCard';
+import { guaranteeData } from '../../data/RandomData';
 
 function Home() {
     const [sliderCurrent, setSliderCurrent] = useState(0);
@@ -114,7 +115,17 @@ function Home() {
                                     <PrevArrrow/>
                                     <NextArrow/>
                                 </SliderButtons>
-                                <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="10" marginTop="-9"></Wrapper>
+
+                                <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="10" marginTop="-9">
+                                    <Wrapper display="flex" flexDirection="column" position="center">
+                                        {guaranteeData.map(guarantee => (
+                                            <Placeholder key={guarantee.id} textAlign="center" marginTop="1">
+                                                <strong>{guarantee.title}</strong> <br/>
+                                                {guarantee.desc}
+                                            </Placeholder>
+                                        ))}
+                                    </Wrapper>
+                                </Wrapper>
                             </Wrapper>
                             
                         </Card>

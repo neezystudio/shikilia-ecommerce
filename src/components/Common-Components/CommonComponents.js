@@ -33,7 +33,8 @@ export const Wrapper = styled.section`
         display === "grid" ? "grid" : ""
     )};
     flex-direction: ${({flexDirection}) => (
-        flexDirection === "row" ? "row" : ""
+        flexDirection === "row" ? "row" : "" &&
+        flexDirection === "column" ? "column" : ""
     )};
 
     justify-content: ${({position}) => (
@@ -211,6 +212,7 @@ export const Placeholder = styled.p`
         marginTop === "0.1" ? "0.1rem" : "0rem" &&
         marginTop === "0.5" ? "0.4rem" : "0rem" &&
         marginTop === "2" ? "1rem" : "0rem" &&
+        marginTop === "1" ? "1rem" : "0rem" &&
         marginTop === "2.5" ? "2rem" : "0rem"
     )};
     color: ${({color}) => (
