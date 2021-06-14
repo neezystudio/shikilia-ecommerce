@@ -222,6 +222,7 @@ export const Placeholder = styled.p`
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
         color === "black" ? "black" : "white" &&
+        color === "Default" ? "#172b4d" : "white" &&
         color === "yellow" ? "#D8A903" : "white"
     )};
     margin-left: ${({marginLeft}) => (
@@ -368,16 +369,21 @@ export const Image = styled.img`
 `;
  export const SliderButtons = styled.div`
     position: absolute;
-    bottom: 210px;
-    right: 130px;
+    bottom: ${({bottom}) => (
+        bottom === "210" ? "210px" : "0px" 
+    )};
+    right: ${({right}) => (
+        right === "130" ? "130px" : "0px" &&
+        right === "13" ? "1040px" : ""
+    )};
     display: flex;
     z-index: 10;
-    margin-top: -5rem !important;
+    margin-top: ${({marginTop}) => (
+        marginTop === "1" ? "10rem !important" : "0rem"
+    )};
 `;
 
 const arrowButtons = css`
-    width: 50px !important;
-    height: 50px !important;
     color: #fff;
     cursor: pointer;
     background: #000d1a;
@@ -395,8 +401,24 @@ const arrowButtons = css`
 export const PrevArrrow = styled(ArrowBackIcon)`
     ${arrowButtons};
     margin-right: 1rem;
+    width: ${({width}) => (
+        width === "50" ? "50px !important" : "0px" &&
+        width === "35" ? "35px !important" : ""
+    )};
+    height: ${({height}) =>(
+        height === "50" ? "50px !important" : "0px" &&
+        height === "35" ? "35px !important" : ""
+    )};
 `;
 export const NextArrow = styled(ArrowForwardIcon)`
     ${arrowButtons};
     margin-right: 4rem;
+    width: ${({width}) => (
+        width === "50" ? "50px !important" : "0px" &&
+        width === "35" ? "35px !important" : ""
+    )};
+    height: ${({height}) =>(
+        height === "50" ? "50px !important" : "0px" &&
+        height === "35" ? "35px !important" : ""
+    )};
 `;

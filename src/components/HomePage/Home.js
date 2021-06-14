@@ -112,9 +112,9 @@ function Home() {
                                         )}
                                     </Wrapper>
                                 ))}
-                                <SliderButtons>
-                                    <PrevArrrow/>
-                                    <NextArrow/>
+                                <SliderButtons bottom="210" right="130">
+                                    <PrevArrrow width="50" height="50"/>
+                                    <NextArrow width="50" height="50"/>
                                 </SliderButtons>
 
                                 <Wrapper display="flex" backgroundColor="Default" width="933" height="101" top="10" marginTop="-9">
@@ -140,7 +140,13 @@ function Home() {
                 <Wrapper>
                         <Card width="336" height="510">
                             <Wrapper display="flex">
-                                
+                                <Placeholder color="Default" marginLeft="1" fontSize="20" marginTop="0.5">HOT DEALS</Placeholder>
+                                <Wrapper position="end">
+                                    <SliderButtons right="13" marginTop="1">
+                                        <PrevArrrow width="35" height="35"/>
+                                        <NextArrow width="35" height="35"/>
+                                    </SliderButtons>
+                                </Wrapper>
                             </Wrapper>
                         </Card>
                     </Wrapper>
