@@ -9,6 +9,7 @@ import { productCategorysData } from '../../data/ProductCategoryData';
 import { ProductSliderData } from '../../data/ProductSliderData';
 import ProductCard from '../Common-Components/ProductCard';
 import { guaranteeData } from '../../data/RandomData';
+import { productsData } from '../../data/ProductsData';
 
 function Home() {
     const [sliderCurrent, setSliderCurrent] = useState(0);
@@ -97,7 +98,7 @@ function Home() {
                                                         <Title color="Default">{ProductSlide.title}</Title>
                                                         <Placeholder color="black" fontSize="15" marginTop="2">{ProductSlide.description}</Placeholder>
                                                         <Placeholder color="black" fontSize="20" fontWeight="bold" marginTop="2">KSH {ProductSlide.price}</Placeholder>
-                                                        <Button background="Default" display="flex" position="center" width="130" height="62" borderRadius="20">
+                                                        <Button background="Default" display="flex" position="center" width="130" height="62" borderRadius="20" marginTop="1">
                                                             SHOP NOW
                                                         </Button>
                                                     </Wrapper>
@@ -146,9 +147,20 @@ function Home() {
                 </ColumnLeft>
                 <ColumnRight>
                     <Wrapper display="flex" flexDirection="row">
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
+                        <Wrapper display="flex" flexDirection="column">
+                            {productsData.map(productData => (
+                                <ProductCard 
+                                    key={productData.id} 
+                                    productImg={productData.productImg} 
+                                    productTitle={productData.productTitle} 
+                                    availableIn={productData.availableIn} 
+                                    currentPrice={productData.currentPrice} 
+                                    previousPrice={productData.previousPrice}
+                                />
+                            ))}
+                        </Wrapper>
+                        
+                        
                     </Wrapper>
                     {/* <Wrapper display="flex" flexDirection="row">
                         <ProductCard/>

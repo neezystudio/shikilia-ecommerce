@@ -37,6 +37,10 @@ export const Wrapper = styled.section`
         flexDirection === "column" ? "column" : ""
     )};
 
+    flex: 1;
+    // overflow: auto;
+    // min-width: min-content;
+
     justify-content: ${({position}) => (
         position === "end" ? "flex-end" : "center"
     )};

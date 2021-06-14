@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Image, Placeholder, Wrapper } from './CommonComponents'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
-function ProductCard() {
+function ProductCard({productImg, productTitle, availableIn, currentPrice, previousPrice}) {
     return (
         <Card width="282" height="368" marginRight="2">
             <Wrapper height="185">
