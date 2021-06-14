@@ -7,7 +7,7 @@ function ProductCard({productImg, productTitle, availableIn, currentPrice, previ
         <Card width="282" height="368" marginRight="2">
             <Wrapper height="185">
                 <Image 
-                    src="https://res.cloudinary.com/emacon-production/image/upload/v1600949725/Karanga/pexels-leigh-patrick-298217_onbbmh.jpg" 
+                    src={productImg} 
                     alt="product"
                     width="100"
                     height="100"
@@ -33,7 +33,7 @@ function ProductCard({productImg, productTitle, availableIn, currentPrice, previ
                     fontSize="20"
                     marginLeft="1"
                 >
-                    Orange fruits
+                    {productTitle}
                 </Placeholder>
                 
                 <Placeholder
@@ -42,7 +42,7 @@ function ProductCard({productImg, productTitle, availableIn, currentPrice, previ
                     fontSize="18"
                     marginLeft="1"
                 >
-                    <CheckCircleIcon/> Available in - 1Kg
+                    <CheckCircleIcon/> Available in - {availableIn}
                 </Placeholder>
 
                 <Wrapper display="flex">
@@ -52,7 +52,7 @@ function ProductCard({productImg, productTitle, availableIn, currentPrice, previ
                     fontSize="18"
                     marginLeft="1"
                 >
-                    KSH 1,500.00
+                    KSH {currentPrice}.00
                 </Placeholder>
 
                 <Placeholder
@@ -61,7 +61,7 @@ function ProductCard({productImg, productTitle, availableIn, currentPrice, previ
                     fontSize="18"
                     marginLeft="1"
                 >
-                    <del>KSH 3,000.00</del>
+                    <del>KSH {previousPrice}.00</del>
                 </Placeholder>
                 </Wrapper>
                 
