@@ -60,6 +60,7 @@ export const Wrapper = styled.section`
 
     margin-top: ${({marginTop}) => (
         marginTop === "1" ? "1rem" : "0rem" &&
+        marginTop === "3" ? "3rem" : "0rem" &&
         marginTop === "-1" ? "-3rem" : "0rem" &&
         marginTop === "0.5" ? "0.7rem" : "0rem" &&
         marginTop === "-9" ? "-6.5rem" : "0rem"
@@ -142,10 +143,13 @@ export const TargetLink = styled.div`
     margin-top: ${({marginTop}) => (
         marginTop === "1" ? "0.5rem" : "0rem"
     )};
+    
 `;
-export const Form = styled.form``;
+export const Form = styled.form`
+    width: 80%;
+`;
 
-export const Button  = styled.button`
+export const Button  = styled.a`
     display: ${({display}) => (
         display === "flex" ? "flex" : "block"
     )};
@@ -155,13 +159,14 @@ export const Button  = styled.button`
     justify-items: center;
     align-items: center;
     background: ${({background}) => (
-        background === "primary" ? "#5e72e4" : "green" &&
-        background === "Default" ? "#172b4d" : "green"
+        background === "primary" ? "#5e72e4" : "transparent" &&
+        background === "Default" ? "#172b4d" : "transparent"
     )};
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
         color === "yellow" ? "#D8A903" : "white" &&
-        color === "black" ? "black" : "white"
+        color === "black" ? "black" : "white" &&
+        color === "Default" ? "#172b4d" : "white"
     )};
     border: none;
     border-radius: ${({borderRadius}) => (
@@ -181,8 +186,27 @@ export const Button  = styled.button`
         padding === "1" ? "0px 20px 0px 20px" : "0rem"
     )};
     margin-top: ${({marginTop}) => (
-        marginTop === "1" ? "1rem" : "0rem"
+        marginTop === "1" ? "1rem" : "0rem" &&
+        marginTop === "0.1" ? "0.1rem" : "0rem"
     )};
+    margin-right: ${({marginRight}) => (
+        marginRight === "1" ?  "1rem" : "0rem" 
+    )};
+    cursor: pointer !important;
+    user-select: none !important;
+    transition: all 0.3s;
+
+    &:hover {
+        color: ${({hoverColor}) => (
+            hoverColor === "white" ? "white" : "#5e72e4 !important"
+        )};
+        background: ${({background}) => (
+            background === "primary" ? "#172b4d" : "transparent" &&
+            background === "Default" ? "#5e72e4" : "transparent"
+        )};
+        text-decoration: none;
+        transform: scale(1.05) !important;
+    }
 `;
 export const Title = styled.h1`
     display: ${({display}) => (
@@ -266,7 +290,7 @@ export const NumberIndicater = styled.div`
 export const ColumnContainer = styled.div`
     display: grid;
     grid-template-columns: ${({columnSize}) => (
-        columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.3fr"
+        columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.7fr"
     )};
     grid-template-rows: ${({height}) => (
         height === "540" ? "460px" : "100%"
@@ -351,10 +375,12 @@ export const Image = styled.img`
     )};
     width: ${({width}) => (
         width === "360" ? "350px !important" : "100%" &&
+        width === "50" ? "300px !important" : "100%" &&
         width === "100" ? "100% !important" : ""
     )};
     height: ${({height}) => (
         height === "555" ? "555px !important" : "100%" &&
+        height === "50" ? "250px !important" : "100%" &&
         height === "10" ? "50px !important" : "100%" 
     )};
     filter: ${({dropShadow}) => (

@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import {Container, TargetLink, Wrapper, Placeholder, CartIcon, NumberIndicaterBackground, NumberIndicater, ColumnContainer, ColumnLeft, ColumnRight, Card, Image, Button, Form} from '../Common-Components/CommonComponents'
+import SignInModal from '../AuthenticationComponents/SignInModal';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,21 +52,6 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const AccountIcon = styled(PersonIcon)``;
-const CheckoutIcon = styled(CheckIcon)``;
-// const AccountIcon = styled(PersonIcon)``;
-// const CompanyLogo = styled.h1`
-//     font-family: Roboto Condensed;
-//     font-style: italic;
-//     font-weight: bold;
-//     font-size: 55px;
-//     line-height: 64px;
-
-//     color: #FFFFFF;
-// `;
-const CompanyLogo = styled.img`
-    
-`;
 const SelectCategory = styled.select`
   width: 6.5rem;
   height: 2.5rem;
@@ -74,36 +60,11 @@ const SearchBar = styled.input`
     width: 378px;
     height: 2.5rem;
 `;
-const SearchButton = styled(Link)`
-    // background:  ${({ primary }) => (primary ? '#000d1a' : 'CD853F')};
-    background: grey;
-    white-space: nowarp;
-    outline: none;
-    border: none;
-    min-width: 100px;
-    max-width: 200px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.4s all;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // padding: ${({ big }) => (big ? '16px 40px' : '14px 24px')};
-    // padding: 16px 40px;
-    // color: ${({ primary }) => ( primary ? '#fff' : '#000d1a')};
-    color: #fff;
-    // font-size: ${({ big }) => (big ? '20px' : '14px')};
-    font-size: 20px;
-
-    &:hover{
-        transform: translateY(-2px);
-    }
-`;
-const MyCartWrapper = styled.div``;
 
 function Navigation() {
     const classes = useStyles();
     const [age, setAge] = useState();
+    const [signInModal, setSignInModal] = useState(true);
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -128,7 +89,14 @@ function Navigation() {
                                     }
                                 </Container>
                             
-                            <Placeholder marginTop = "0.1" marginRight = "1">{menuData.title}</Placeholder>
+                                <Button 
+                                    marginTop = "0.1" 
+                                    marginRight = "1" 
+                                    onClick ={() => setSignInModal(true)}
+                                >
+                                    {menuData.title}
+                                </Button>
+                                <SignInModal signInModal={signInModal} />
                             </TargetLink>
                         ))}
                     </Wrapper>
