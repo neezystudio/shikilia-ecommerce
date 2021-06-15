@@ -3,13 +3,19 @@ import CategoryIcon from '@material-ui/icons/Category'; //Category
 import LocalMallIcon from '@material-ui/icons/LocalMall'; // Clothing
 import DevicesIcon from '@material-ui/icons/Devices'; //Electronic
 import WatchIcon from '@material-ui/icons/Watch'; //Watch
+import * as FaIcons from 'react-icons/fa';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Card, ColumnContainer, ColumnLeft, ColumnRight, Title, Placeholder, TargetLink, Wrapper, Image, Button, SliderButtons, NextArrow, PrevArrrow } from '../Common-Components/CommonComponents';
 import { productCategorysData } from '../../data/ProductCategoryData';
 import { ProductSliderData } from '../../data/ProductSliderData';
 import ProductCard from '../Common-Components/ProductCard';
 import { guaranteeData } from '../../data/RandomData';
+import ChildCareIcon from '@material-ui/icons/ChildCare';
 import { productsData } from '../../data/ProductsData';
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import SportsFootballIcon from '@material-ui/icons/SportsFootball';
+import HomeIcon from '@material-ui/icons/Home';
+
 
 function Home() {
     const [sliderCurrent, setSliderCurrent] = useState(0);
@@ -71,7 +77,12 @@ function Home() {
                                             productCategoryData.icon === "CategoryIcon" ? <CategoryIcon/> : <></> &&
                                             productCategoryData.icon === "LocalMallIcon" ? <LocalMallIcon/> : <></> &&
                                             productCategoryData.icon === "DevicesIcon" ? <DevicesIcon/> : <></> &&
-                                            productCategoryData.icon === "WatchIcon" ? <WatchIcon/> : <></>
+                                            productCategoryData.icon === "WatchIcon" ? <WatchIcon/> : <></>&&
+                                                            productCategoryData.icon === "LocalHospitalIcon" ? <LocalHospitalIcon /> : <></>&&
+                                                                productCategoryData.icon === "ChildCareIcon" ? <ChildCareIcon/> : <></>&&
+                                                                    productCategoryData.icon === "SportsFootballIcon" ? <SportsFootballIcon/> : <></>&&
+                                            productCategoryData.icon === "HomeIcon" ? <HomeIcon /> : <></>
+                                            
                                         }
                                         <Placeholder color={productCategoryData.color} marginLeft="1">{productCategoryData.placeHolder}</Placeholder>
                                         <Wrapper display="flex" position="end" marginRight="1">
