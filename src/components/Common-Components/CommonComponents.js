@@ -17,7 +17,8 @@ export const Wrapper = styled.section`
         height === "280" ? "280px" : "100%" &&
         height === "185" ? "185px" : "100%" &&
         height === "39" ? "39px" : "100%" &&
-        height === "101" ? "101px" : "100%"
+        height === "101" ? "101px" : "100%" &&
+        height === "70" ? "70px" : "100%"
     )};
 
     width: ${({width}) => (
@@ -42,7 +43,8 @@ export const Wrapper = styled.section`
     // min-width: min-content;
 
     justify-content: ${({position}) => (
-        position === "end" ? "flex-end" : "center"
+        position === "end" ? "flex-end" : "center" &&
+        position === "start" ? "flex-start" : "center"
     )};
 
     position: ${({position}) => (
@@ -106,7 +108,7 @@ export const Container = styled.div`
 
 `;
 
-export const TargetLink = styled.div`
+export const TargetLink = styled.a`
     display: ${({display}) => (
         display === "flex" ? "flex" : "block"
     )};
@@ -119,7 +121,8 @@ export const TargetLink = styled.div`
     color: ${({color}) => (
         color === "white" ? "white" : "black" &&
         color === "yellow" ? "#fb6340" : "white" &&
-        color === "black" ? "black" : "white"
+        color === "black" ? "black" : "white" &&
+        color === "primary" ? "#5e72e4" : "white"
     )};
     border-left: ${({borderLeft}) => borderLeft ? "1px solid #FFFFFF" : "none"};
     border-right: ${({borderRight}) => borderRight ? "1px solid #FFFFFF" : "none"};
@@ -141,8 +144,31 @@ export const TargetLink = styled.div`
         padding === "1" ? "0px 20px 0px 20px" : "0rem"
     )};
     margin-top: ${({marginTop}) => (
-        marginTop === "1" ? "0.5rem" : "0rem"
+        marginTop === "1" ? "0.5rem" : "0rem" &&
+        marginTop === "2" ? "2rem !important" : "0rem"
     )};
+    margin-left: ${({marginLeft}) => (
+        marginLeft === "1" ? "1rem" : "0rem"
+    )};
+    text-decoration: none;
+    cursor: pointer !important;
+    user-select: none !important;
+    transition: all 0.3s;
+
+    &:hover {
+        color: ${({hoverColor}) => (
+            hoverColor === "white" ? "white" : "#5e72e4 !important" &&
+            hoverColor === "Default" ? "#172b4d" : "transparent"
+        )};
+        background: ${({background}) => (
+            background === "primary" ? "#172b4d" : "transparent" &&
+            background === "Default" ? "#5e72e4" : "transparent"
+        )};
+        text-decoration: none;
+        transform: ${({transformation}) => (
+            transformation ? "scale(1.2) !important" : "none"
+        )};
+    }
     
 `;
 export const Form = styled.form`
@@ -293,10 +319,13 @@ export const ColumnContainer = styled.div`
         columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.7fr"
     )};
     grid-template-rows: ${({height}) => (
-        height === "540" ? "460px" : "100%"
+        height === "540" ? "460px" : "100%" &&
+        height === "10" ? "10px" : "100%"
     )};
-    padding: 1rem calc((100vw - 1400px) / 2);
-
+    padding: ${({padding}) => (
+        padding === "modal" ? "1rem calc((100vw - 1900px) / 2)" : "1rem calc((100vw - 1400px) / 2)"
+    )};
+    width: 100%;
 
     &::before {
         ${({slider}) => (
@@ -327,12 +356,16 @@ export const ColumnLeft = styled.div`
     // justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
-    padding: 0.5rem 2rem;
+    padding: ${({padding}) => (
+        padding === "modal" ? "0.5rem 1rem" : "0.5rem 2rem"
+    )};
     order: ${({ reverse }) => (reverse ? '2' : '1')};
 `;
 
 export const ColumnRight = styled.div`
-    padding: 1rem 2rem;
+    padding: ${({padding}) => (
+        padding === "modal" ? "1rem 1rem" : "1rem 2rem"
+    )};
     order: ${({ reverse }) => (reverse ? '1' : '2')};
     // display: flex;
     // justify-content: center;
@@ -376,11 +409,13 @@ export const Image = styled.img`
     width: ${({width}) => (
         width === "360" ? "350px !important" : "100%" &&
         width === "50" ? "300px !important" : "100%" &&
+        width === "20" ? "40px !important" : "100%" &&
         width === "100" ? "100% !important" : ""
     )};
     height: ${({height}) => (
         height === "555" ? "555px !important" : "100%" &&
         height === "50" ? "250px !important" : "100%" &&
+        height === "20" ? "40px !important" : "100%" &&
         height === "10" ? "50px !important" : "100%" 
     )};
     filter: ${({dropShadow}) => (

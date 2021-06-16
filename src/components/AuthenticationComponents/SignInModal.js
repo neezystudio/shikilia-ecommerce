@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import { Button, ColumnContainer, ColumnLeft, ColumnRight, Form, Image, Title, Wrapper } from '../Common-Components/CommonComponents';
+import { Button, ColumnContainer, ColumnLeft, ColumnRight, Form, Image, Placeholder, TargetLink, Title, Wrapper } from '../Common-Components/CommonComponents';
 import CloseIcon from '@material-ui/icons/Close';
-import { FilledInput, FormControl, IconButton, Input, InputLabel, TextField } from '@material-ui/core';
+import { Checkbox, FilledInput, FormControl, FormControlLabel, IconButton, Input, InputLabel, TextField } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -98,6 +98,7 @@ function SignInModal({signInModal}) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState()
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
 
     return (
         <Modal
@@ -156,20 +157,67 @@ function SignInModal({signInModal}) {
                                             }
                                         />
                                     </FormControl>
-                                    <Button 
-                                        display="flex" 
-                                        position="center" 
-                                        color="white" 
-                                        hoverColor="white"
-                                        background="Default"
-                                        width="130"
-                                        height="62"
-                                        marginTop="1"
-                                        borderRadius="20"
-                                    >
-                                        Sign In
-                                    </Button>
+
+                                    <Wrapper height="70">
+                                        <ColumnContainer height="10" padding="modal">
+                                            <ColumnLeft padding="modal">
+                                                <FormControlLabel
+                                                    control={
+                                                        <Checkbox
+                                                            checked={rememberMe}
+                                                            onChange={() => setRememberMe(!rememberMe)}
+                                                            color="primary"
+                                                        />
+                                                    }
+                                                    label="Remember Me"
+                                                />
+                                            </ColumnLeft>
+
+                                            <ColumnRight padding="modal">
+                                                <Wrapper>
+                                                    <TargetLink color="primary" hoverColor="Default" transformation={false}>Forgot Password?</TargetLink>
+                                                </Wrapper>
+                                            </ColumnRight>
+                                        </ColumnContainer> 
+                                    </Wrapper>
+
+                                    <Wrapper marginTop="2">
+                                        <Button 
+                                            display="flex" 
+                                            position="center" 
+                                            color="white" 
+                                            hoverColor="white"
+                                            background="Default"
+                                            width="130"
+                                            height="62"
+                                            marginTop="1"
+                                            borderRadius="20"
+                                        >
+                                            Sign In
+                                        </Button>
+                                    </Wrapper>
                                 </Form>
+
+                                <Placeholder marginTop="1" color="Default">Sign In with:</Placeholder>
+                                <Wrapper display="flex" position="start">
+                                    <TargetLink transformation={true}>
+                                        <Image 
+                                            src="https://res.cloudinary.com/emacon-production/image/upload/v1623760959/Shikilia/Google__G__Logo.svg_wcclkk.png" 
+                                            alt=""
+                                            width ="20"
+                                            height="20"
+                                        />
+                                    </TargetLink>
+                                    <TargetLink transformation={true} marginLeft="1">
+                                        <Image 
+                                            src="https://res.cloudinary.com/emacon-production/image/upload/v1623760958/Shikilia/Apple_dhrn5w.png" 
+                                            alt=""
+                                            width ="20"
+                                            height="20"
+                                        />
+                                    </TargetLink>
+                                    
+                                </Wrapper>
                             </ColumnLeft>
                             <ColumnRight>
                                 <Title>Sign In to Shop at Shikilia</Title>
