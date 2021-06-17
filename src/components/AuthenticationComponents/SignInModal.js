@@ -188,7 +188,6 @@ function SignInModal({signInModal}) {
                                             color="white" 
                                             hoverColor="white"
                                             background="Default"
-                                            width="130"
                                             height="62"
                                             marginTop="1"
                                             borderRadius="20"
@@ -198,26 +197,37 @@ function SignInModal({signInModal}) {
                                     </Wrapper>
                                 </Form>
 
-                                <Placeholder marginTop="1" color="Default">Sign In with:</Placeholder>
-                                <Wrapper display="flex" position="start">
-                                    <TargetLink transformation={true}>
-                                        <Image 
-                                            src="https://res.cloudinary.com/emacon-production/image/upload/v1623760959/Shikilia/Google__G__Logo.svg_wcclkk.png" 
-                                            alt=""
-                                            width ="20"
-                                            height="20"
-                                        />
-                                    </TargetLink>
-                                    <TargetLink transformation={true} marginLeft="1">
-                                        <Image 
-                                            src="https://res.cloudinary.com/emacon-production/image/upload/v1623760958/Shikilia/Apple_dhrn5w.png" 
-                                            alt=""
-                                            width ="20"
-                                            height="20"
-                                        />
-                                    </TargetLink>
-                                    
-                                </Wrapper>
+                                <ColumnContainer padding="modal" columnSize="rightBigger">
+                                    <ColumnLeft padding="modal">
+                                        <Placeholder marginTop="1" color="Default">Sign In with:</Placeholder>
+                                        <Wrapper display="flex" position="start">
+                                            
+                                            <TargetLink transformation={true}>
+                                                <Image 
+                                                    src="https://res.cloudinary.com/emacon-production/image/upload/v1623760959/Shikilia/Google__G__Logo.svg_wcclkk.png" 
+                                                    alt=""
+                                                    width ="20"
+                                                    height="20"
+                                                />
+                                            </TargetLink>
+                                            <TargetLink transformation={true} marginLeft="1">
+                                                <Image 
+                                                    src="https://res.cloudinary.com/emacon-production/image/upload/v1623760958/Shikilia/Apple_dhrn5w.png" 
+                                                    alt=""
+                                                    width ="20"
+                                                    height="20"
+                                                />
+                                            </TargetLink>
+                                            
+                                        </Wrapper>
+                                    </ColumnLeft>
+                                    <ColumnRight padding="modal">
+                                        <Wrapper display="flex" position="start" marginTop="0.5">
+                                            <TargetLink color="primary" hoverColor="Default" transformation={false}>Don't have an account? Create one</TargetLink>
+                                        </Wrapper>
+                                    </ColumnRight>
+                                </ColumnContainer>
+                                
                             </ColumnLeft>
                             <ColumnRight>
                                 <Title>Sign In to Shop at Shikilia</Title>
