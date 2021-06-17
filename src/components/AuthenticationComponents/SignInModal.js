@@ -230,7 +230,15 @@ function SignInModal({signInModal}) {
                                 
                             </ColumnLeft>
                             <ColumnRight>
-                                <Title>Sign In to Shop at Shikilia</Title>
+                                <Wrapper display="flex" position="center" height="101" marginTop="1">
+                                    <Image 
+                                        src="https://res.cloudinary.com/emacon-production/image/upload/v1623146015/Shikilia/Shikilia_Stores_Logo_zdzer3.png" 
+                                        alt="Shopping" 
+                                        width="200"
+                                        height="80"
+                                    />
+                                </Wrapper>
+                                <Title textAlign="center">Sign Up to Shop at Shikilia</Title>
                                 <Wrapper display="flex" position="center" marginTop="3">
                                     <Image 
                                         src="https://res.cloudinary.com/emacon-production/image/upload/v1623754489/Shikilia/undraw_shopping_app_flsj_ovxqmv.svg" 
