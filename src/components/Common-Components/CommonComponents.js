@@ -243,6 +243,9 @@ export const Title = styled.h1`
         color === "Default" ? "#172b4d" : "black"
     )};
     font-weight: bold;
+    text-align: ${({textAlign}) => (
+        textAlign === "center" ? "center" : ""
+    )};
 `;
 export const Placeholder = styled.p`
     display: ${({display}) => (
@@ -316,10 +319,12 @@ export const NumberIndicater = styled.div`
 export const ColumnContainer = styled.div`
     display: grid;
     grid-template-columns: ${({columnSize}) => (
-        columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.7fr"
+        columnSize === "rightBigger" ? "0fr 1fr" : "1fr 0.7fr" &&
+        columnSize === "signUpModal" ? "0.7fr 0.7fr" : "1fr 0.7fr"
     )};
     grid-template-rows: ${({height}) => (
         height === "540" ? "460px" : "100%" &&
+        height === "560" ? "650px" : "100%" &&
         height === "10" ? "10px" : "100%"
     )};
     padding: ${({padding}) => (
@@ -410,13 +415,15 @@ export const Image = styled.img`
         width === "360" ? "350px !important" : "100%" &&
         width === "50" ? "300px !important" : "100%" &&
         width === "20" ? "40px !important" : "100%" &&
+        width === "200" ? "200px !important" : "100%" &&
         width === "100" ? "100% !important" : ""
     )};
     height: ${({height}) => (
         height === "555" ? "555px !important" : "100%" &&
         height === "50" ? "250px !important" : "100%" &&
         height === "20" ? "40px !important" : "100%" &&
-        height === "10" ? "50px !important" : "100%" 
+        height === "10" ? "50px !important" : "100%" &&
+        height === "80" ? "80px !important" : "100%"
     )};
     filter: ${({dropShadow}) => (
         dropShadow ? "drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.27))" : "none"

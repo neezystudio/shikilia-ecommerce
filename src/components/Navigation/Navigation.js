@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import {Container, TargetLink, Wrapper, Placeholder, CartIcon, NumberIndicaterBackground, NumberIndicater, ColumnContainer, ColumnLeft, ColumnRight, Card, Image, Button, Form} from '../Common-Components/CommonComponents'
 import SignInModal from '../AuthenticationComponents/SignInModal';
+import SignUpModal from '../AuthenticationComponents/SignUpModal';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +65,8 @@ const SearchBar = styled.input`
 function Navigation() {
     const classes = useStyles();
     const [age, setAge] = useState();
-    const [signInModal, setSignInModal] = useState(true);
+    const [signInModal, setSignInModal] = useState(false);
+    const [signUpModal, setSignUpModal] = useState(true);
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -97,6 +99,7 @@ function Navigation() {
                                     {menuData.title}
                                 </Button>
                                 <SignInModal signInModal={signInModal} />
+                                <SignUpModal signUpModal={signUpModal} />
                             </TargetLink>
                         ))}
                     </Wrapper>

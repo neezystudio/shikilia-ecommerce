@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Modal from '@material-ui/core/Modal';
@@ -6,7 +6,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { Button, ColumnContainer, ColumnLeft, ColumnRight, Form, Image, Placeholder, TargetLink, Title, Wrapper } from '../Common-Components/CommonComponents';
 import CloseIcon from '@material-ui/icons/Close';
-import { Checkbox, FormControl, FormControlLabel, IconButton, Input, InputLabel, TextField } from '@material-ui/core';
+import { Checkbox, FilledInput, FormControl, FormControlLabel, IconButton, Input, InputLabel, TextField } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             color: "#172b4d",
             borderColor: "#172b4d !important",
-            width: "100%"
+            
         },
         '& label.Mui-focused': {
             color: '#5e72e4',
@@ -55,50 +55,17 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: theme.shadows[10],
       padding: theme.spacing(2, 4, 3),
     },
-    textField: {
-        width: '100%',
-        '& > *': {
-            color: "#172b4d",
-            borderColor: "#172b4d !important",
-            width: "100%"
-        },
-        '& label.Mui-focused': {
-            color: '#5e72e4',
-        },
-        '& .MuiInput-underline:before': {
-            borderBottomColor: '#172b4d',
-        },
-        '&:hover .MuiInput-underline:before': {
-            borderBottomColor: '#172b4d',
-        },
-        '& .MuiInput-underline:hover': {
-            borderBottomColor: '#172b4d',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#5e72e4',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#172b4d',
-            },
-            '&:hover fieldset': {
-                borderColor: '#172b4d',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: '#5e72e4',
-            },
-        },
-      },
   }));
 
-function SignInModal({signInModal}) {
+function SignUpModal({signUpModal}) {
     const classes = useStyles();
 
-    const [modalState, setModalState] = useState(signInModal);
+    const [modalState, setModalState] = useState(signUpModal);
+    const [name, setName] = useState();
     const [email, setEmail] = useState();
-    const [password, setPassword] = useState()
-    const [showPassword, setShowPassword] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
+    const [password, setPassword] = useState();
+    const [confirmPassword, setConfirmPassword] = useState()
+    const [privacyPolicy, setPrivacyPolicy] = useState(false);
 
     return (
         <Modal
@@ -120,10 +87,22 @@ function SignInModal({signInModal}) {
                            <CloseIcon/> 
                         </Button>
                     </Wrapper>
-                    <ColumnContainer height="540">
-                            <ColumnLeft>
-                                <Title>Hello, Welcome Back!</Title>
+                    <ColumnContainer height="560" columnSize="signUpModal">
+                            <ColumnLeft padding="modal">
+                                <Title>Join Us!</Title>
                                 <Form>
+                                    <TextField
+                                        className={classes.root}
+                                        margin='normal'
+                                        required
+                                        fullWidth
+                                        id='name'
+                                        label='Full Name'
+                                        name='name'
+                                        type='text'
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
                                     <TextField
                                         className={classes.root}
                                         margin='normal'
@@ -136,49 +115,43 @@ function SignInModal({signInModal}) {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
-                                    <FormControl className={clsx(classes.margin, classes.textField)}>
-                                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                                        <Input
-                                            id="standard-adornment-password"
-                                            fullWidth
-                                            type={showPassword ? 'text' : 'password'}
-                                            value={password}
-                                            onChange = {(e) => setPassword(e.target.value)}
-                                            endAdornment={
-                                                <InputAdornment position="end">
-                                                    <IconButton
-                                                    aria-label="toggle password visibility"
-                                                    onClick={() => setShowPassword(true)}
-                                                    onMouseDown={() => setShowPassword(false)}
-                                                    >
-                                                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                                                    </IconButton>
-                                                </InputAdornment>
-                                            }
-                                        />
-                                    </FormControl>
+                                    <TextField
+                                        className={classes.root}
+                                        margin='normal'
+                                        required
+                                        fullWidth
+                                        id='password'
+                                        label='Password'
+                                        name='password'
+                                        type='password'
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
 
-                                    <Wrapper height="70">
-                                        <ColumnContainer height="10" padding="modal">
-                                            <ColumnLeft padding="modal">
-                                                <FormControlLabel
-                                                    control={
-                                                        <Checkbox
-                                                            checked={rememberMe}
-                                                            onChange={() => setRememberMe(!rememberMe)}
-                                                            color="primary"
-                                                        />
-                                                    }
-                                                    label="Remember Me"
+                                    <TextField
+                                        className={classes.root}
+                                        margin='normal'
+                                        required
+                                        fullWidth
+                                        id='confirmPassword'
+                                        label='Confirm Password'
+                                        name='confirmPassword'
+                                        type='password'
+                                        value={confirmPassword}
+                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                    />
+
+                                    <Wrapper height="50" marginTop="1">
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    checked={privacyPolicy}
+                                                    onChange={() => setPrivacyPolicy(!privacyPolicy)}
+                                                    color="primary"
                                                 />
-                                            </ColumnLeft>
-
-                                            <ColumnRight padding="modal">
-                                                <Wrapper>
-                                                    <TargetLink color="primary" hoverColor="Default" transformation={false}>Forgot Password?</TargetLink>
-                                                </Wrapper>
-                                            </ColumnRight>
-                                        </ColumnContainer> 
+                                            }
+                                            label="I Agree with the privacy policy"
+                                        />
                                     </Wrapper>
 
                                     <Wrapper marginTop="2">
@@ -192,14 +165,14 @@ function SignInModal({signInModal}) {
                                             marginTop="1"
                                             borderRadius="20"
                                         >
-                                            Sign In
+                                            Sign Up
                                         </Button>
                                     </Wrapper>
                                 </Form>
 
                                 <ColumnContainer padding="modal" columnSize="rightBigger">
                                     <ColumnLeft padding="modal">
-                                        <Placeholder marginTop="1" color="Default">Sign In with:</Placeholder>
+                                        <Placeholder marginTop="1" color="Default">Sign Up with:</Placeholder>
                                         <Wrapper display="flex" position="start">
                                             
                                             <TargetLink transformation={true}>
@@ -222,15 +195,23 @@ function SignInModal({signInModal}) {
                                         </Wrapper>
                                     </ColumnLeft>
                                     <ColumnRight padding="modal">
-                                        <Wrapper display="flex" position="start" marginTop="0.5">
-                                            <TargetLink color="primary" hoverColor="Default" transformation={false}>Don't have an account? Create one</TargetLink>
+                                        <Wrapper display="flex" marginTop="0.5">
+                                            <TargetLink color="primary" hoverColor="Default" transformation={false}>Already have an account? Sign In</TargetLink>
                                         </Wrapper>
                                     </ColumnRight>
                                 </ColumnContainer>
                                 
                             </ColumnLeft>
                             <ColumnRight>
-                                <Title>Sign In to Shop at Shikilia</Title>
+                                <Wrapper display="flex" position="center" height="101" marginTop="1">
+                                    <Image 
+                                        src="https://res.cloudinary.com/emacon-production/image/upload/v1623146015/Shikilia/Shikilia_Stores_Logo_zdzer3.png" 
+                                        alt="Shopping" 
+                                        width="200"
+                                        height="80"
+                                    />
+                                </Wrapper>
+                                <Title textAlign="center">Sign Up to Shop at Shikilia</Title>
                                 <Wrapper display="flex" position="center" marginTop="3">
                                     <Image 
                                         src="https://res.cloudinary.com/emacon-production/image/upload/v1623754489/Shikilia/undraw_shopping_app_flsj_ovxqmv.svg" 
@@ -247,4 +228,4 @@ function SignInModal({signInModal}) {
     )
 }
 
-export default SignInModal
+export default SignUpModal
