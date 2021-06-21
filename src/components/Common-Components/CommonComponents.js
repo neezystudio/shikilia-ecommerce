@@ -464,7 +464,7 @@ const arrowButtons = css`
     margin-right: 3rem;
     user-select: none;
     transition: 0.3s;
-    top: 10px !important;
+    // top: 0px !important;
     &:hover {
         background: #5e72e4;
         transform: scale(1.05);

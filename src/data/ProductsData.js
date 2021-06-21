@@ -22,5 +22,21 @@ export const productsData = [
         availableIn: "1kg",
         currentPrice: "1,500",
         previousPrice: "3,000"
+    },
+    {
+        id: 4, 
+        productImg:"https://res.cloudinary.com/emacon-production/image/upload/v1600949725/Karanga/pexels-leigh-patrick-298217_onbbmh.jpg",
+        productTitle: "Orange Fruits",
+        availableIn: "1kg",
+        currentPrice: "1,500",
+        previousPrice: "3,000"
+    },
+    {
+        id: 5, 
+        productImg:"https://res.cloudinary.com/emacon-production/image/upload/v1600949725/Karanga/pexels-leigh-patrick-298217_onbbmh.jpg",
+        productTitle: "Orange Fruits",
+        availableIn: "1kg",
+        currentPrice: "1,500",
+        previousPrice: "3,000"
     }
 ];

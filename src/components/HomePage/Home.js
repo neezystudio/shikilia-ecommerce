@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef} from 'react'
+import { Col, Row } from 'react-bootstrap'
 import CategoryIcon from '@material-ui/icons/Category'; //Category
 import LocalMallIcon from '@material-ui/icons/LocalMall'; // Clothing
 import DevicesIcon from '@material-ui/icons/Devices'; //Electronic
@@ -163,18 +164,22 @@ function Home() {
                     </Wrapper>
                 </ColumnLeft>
                 <ColumnRight>
-                    <Wrapper display="flex" flexDirection="row">
-                        <Wrapper display="flex" flexDirection="column">
-                            {productsData.map(productData => (
-                                <ProductCard 
-                                    key={productData.id} 
-                                    productImg={productData.productImg} 
-                                    productTitle={productData.productTitle} 
-                                    availableIn={productData.availableIn} 
-                                    currentPrice={productData.currentPrice} 
-                                    previousPrice={productData.previousPrice}
-                                />
-                            ))}
+                    <Wrapper>
+                        <Wrapper>
+                            <Row>
+                               {productsData.map(productData => (
+                                   <Col md={4} key={productData.id} >
+                                      <ProductCard  
+                                            productImg={productData.productImg} 
+                                            productTitle={productData.productTitle} 
+                                            availableIn={productData.availableIn} 
+                                            currentPrice={productData.currentPrice} 
+                                            previousPrice={productData.previousPrice}
+                                        /> 
+                                   </Col>     
+                                ))} 
+                            </Row>
+                            
                         </Wrapper>
                         
                         
