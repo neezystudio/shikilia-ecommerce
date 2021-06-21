@@ -150,10 +150,14 @@ export const TargetLink = styled.a`
     margin-left: ${({marginLeft}) => (
         marginLeft === "1" ? "1rem" : "0rem"
     )};
+    margin-right: ${({marginRight}) => (
+        marginRight === "1" ? "1rem" : "0rem"
+    )};
     text-decoration: none;
     cursor: pointer !important;
     user-select: none !important;
     transition: all 0.3s;
+    z-index: 1000;
 
     &:hover {
         color: ${({hoverColor}) => (

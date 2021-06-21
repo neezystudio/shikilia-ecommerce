@@ -66,7 +66,7 @@ function Navigation() {
     const classes = useStyles();
     const [age, setAge] = useState();
     const [signInModal, setSignInModal] = useState(false);
-    const [signUpModal, setSignUpModal] = useState(true);
+    const [signUpModal, setSignUpModal] = useState(false);
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -79,7 +79,15 @@ function Navigation() {
                 <Container margin = "0-5-0-0">
                     <Wrapper display = "flex" position = "end" right = "15" paddingTop = "0.5">
                         {topMenuData.map((menuData) => (
-                            <TargetLink display = "flex" color = "white" borderLeft = {menuData.border} key={menuData.id}>
+                            <TargetLink 
+                                display = "flex" 
+                                color = "white" 
+                                borderLeft = {menuData.border} 
+                                key={menuData.id} hoverColor="white" 
+                                transformation={false}
+                                marginRight="1"
+                                onClick={() => setSignInModal(true)}
+                            >
                                 <Container marginLeft = "1" marginRight = "0.5">
                                     {
                                         menuData.icon === 'FavoriteIcon' ?
@@ -91,13 +99,9 @@ function Navigation() {
                                     }
                                 </Container>
                             
-                                <Button 
-                                    marginTop = "0.1" 
-                                    marginRight = "1" 
-                                    onClick ={() => setSignInModal(true)}
-                                >
-                                    {menuData.title}
-                                </Button>
+
+                                {menuData.title}
+                                
                                 <SignInModal signInModal={signInModal} />
                                 <SignUpModal signUpModal={signUpModal} />
                             </TargetLink>
