@@ -18,7 +18,8 @@ export const Wrapper = styled.section`
         height === "185" ? "185px" : "100%" &&
         height === "39" ? "39px" : "100%" &&
         height === "101" ? "101px" : "100%" &&
-        height === "70" ? "70px" : "100%"
+        height === "70" ? "70px" : "100%" &&
+        height === "170" ? "170px" : "100%"
     )};
 
     width: ${({width}) => (
@@ -26,7 +27,8 @@ export const Wrapper = styled.section`
         width === "280" ? "280px" : "100%" &&
         width === "282" ? "282px" : "100%" &&
         width === "80" ? "80px" : "100%" &&
-        width === "933" ? "933px" : "100%"
+        width === "933" ? "933px" : "100%" &&
+        width === "150" ? "150px" : "100%"
     )};
 
     display: ${({display}) => (
@@ -213,7 +215,8 @@ export const Button  = styled.a`
         height === "41" ? "41px" : "100%"
     )};
     padding: ${({padding}) => (
-        padding === "1" ? "0px 20px 0px 20px" : "0rem"
+        padding === "1" ? "0px 20px 0px 20px" : "0rem" &&
+        padding === "1-1-1-1" ? "1rem 1rem 1rem 1rem" : "0rem 0rem 0rem 0rem"
     )};
     margin-top: ${({marginTop}) => (
         marginTop === "1" ? "1rem" : "0rem" &&
@@ -437,6 +440,9 @@ export const Image = styled.img`
     )};
     left: ${({left}) => (
         left === "1020" ? "1020px" : "0px"
+    )};
+    padding: ${({padding}) => (
+        padding === "1-1-1-1" ? "1rem 1rem 1rem 1rem" : "0rem 0rem 0rem 0rem"
     )};
 `;
  export const SliderButtons = styled.div`

@@ -10,6 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import {Container, TargetLink, Wrapper, Placeholder, CartIcon, NumberIndicaterBackground, NumberIndicater, ColumnContainer, ColumnLeft, ColumnRight, Card, Image, Button, Form} from '../Common-Components/CommonComponents'
 import SignInModal from '../AuthenticationComponents/SignInModal';
 import SignUpModal from '../AuthenticationComponents/SignUpModal';
+import SelectUserModal from '../AuthenticationComponents/SelectUserModal';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +66,7 @@ const SearchBar = styled.input`
 function Navigation() {
     const classes = useStyles();
     const [age, setAge] = useState();
+    const [selectUserModal, setSelectUserModal] = useState(true)
     const [signInModal, setSignInModal] = useState(false);
     const [signUpModal, setSignUpModal] = useState(false);
 
@@ -102,6 +104,7 @@ function Navigation() {
 
                                 {menuData.title}
                                 
+                                <SelectUserModal selectUserModal={selectUserModal}/>
                                 <SignInModal signInModal={signInModal} />
                                 <SignUpModal signUpModal={signUpModal} />
                             </TargetLink>
