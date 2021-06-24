@@ -66,9 +66,9 @@ const SearchBar = styled.input`
 function Navigation() {
     const classes = useStyles();
     const [age, setAge] = useState();
-    const [selectUserModal, setSelectUserModal] = useState(true)
+    const [selectUserModal, setSelectUserModal] = useState(false)
     const [signInModal, setSignInModal] = useState(false);
-    const [signUpModal, setSignUpModal] = useState(false);
+    const [signUpModal, setSignUpModal] = useState(true);
 
     const handleChange = (event) => {
         setAge(event.target.value);
