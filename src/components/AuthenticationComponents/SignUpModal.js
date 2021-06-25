@@ -10,6 +10,10 @@ import { Checkbox, FilledInput, FormControl, FormControlLabel, IconButton, Input
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { signInWithGoogle } from './firebase/firebase.utils';
+import { auth } from './firebase/firebase.utils';
+
+ 
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -175,7 +179,7 @@ function SignUpModal({signUpModal}) {
                                         <Placeholder marginTop="1" color="Default">Sign Up with:</Placeholder>
                                         <Wrapper display="flex" position="start">
                                             
-                                            <TargetLink transformation={true}>
+                                        <TargetLink transformation={true} onClick={signInWithGoogle}>
                                                 <Image 
                                                     src="https://res.cloudinary.com/emacon-production/image/upload/v1623760959/Shikilia/Google__G__Logo.svg_wcclkk.png" 
                                                     alt=""
