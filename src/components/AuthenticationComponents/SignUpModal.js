@@ -195,6 +195,30 @@ function SignUpModal({signUpModal}) {
                                                     height="20"
                                                 />
                                             </TargetLink>
+                                            <TargetLink transformation={true} marginLeft="1">
+                                                <Image 
+                                                    src="https://res.cloudinary.com/emacon-production/image/upload/v1624868583/Shikilia/png-clipart-facebook-logo-computer-icons-facebook-facebook-computer-logo_gvwyvz.png" 
+                                                    alt=""
+                                                    width ="20"
+                                                    height="20"
+                                                />
+                                            </TargetLink>
+                                            <TargetLink transformation={true} marginLeft="1">
+                                                <Image 
+                                                    src="https://res.cloudinary.com/emacon-production/image/upload/v1624868703/Shikilia/logo-twitter-11549535419aik8i3pkro_b5jbfd.png" 
+                                                    alt=""
+                                                    width ="20"
+                                                    height="20"
+                                                />
+                                            </TargetLink>
+                                            <TargetLink transformation={true} marginLeft="1">
+                                                <Image 
+                                                    src="https://res.cloudinary.com/emacon-production/image/upload/v1624868951/Shikilia/2048px-Octicons-mark-github.svg_sojwfj.png" 
+                                                    alt=""
+                                                    width ="20"
+                                                    height="20"
+                                                />
+                                            </TargetLink>
                                             
                                         </Wrapper>
                                     </ColumnLeft>
